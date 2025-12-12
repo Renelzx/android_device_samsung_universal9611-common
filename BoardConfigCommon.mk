@@ -79,9 +79,6 @@ BOARD_DTB_CFG := $(COMMON_PATH)/configs/kernel/exynos9611.cfg
 $(call soong_config_set,samsungCameraVars,usage_64bit,true)
 $(call soong_config_set,samsungCameraVars,needs_sec_reserved_field,true)
 
-## Graphics
-TARGET_USES_VULKAN := true
-
 ## Kernel
 BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_KERNEL_NO_GCC := true
