@@ -93,19 +93,14 @@ DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 
 ## NFC SKU
-ifeq ($(filter true, $(TARGET_USES_NXP_NFC) $(TARGET_USES_SLSI_NFC)),true)
-ODM_MANIFEST_SKUS := hce hceese hcesim hcesimese disabled
 ifeq ($(TARGET_USES_NXP_NFC),true)
-PREFIX := nxp
-else
-PREFIX := slsi
-endif
-ODM_MANIFEST_NFC_FILE := $(COMMON_PATH)/configs/nfc/odm_nfc_manifest_$(PREFIX).xml
+ODM_MANIFEST_SKUS := hce hceese hcesim hcesimese disabled
+ODM_MANIFEST_NFC_FILE := $(COMMON_PATH)/configs/nfc/odm_nfc_manifest_nxp.xml
 ODM_MANIFEST_HCE_FILES := $(ODM_MANIFEST_NFC_FILE)
 ODM_MANIFEST_HCEESE_FILES := $(ODM_MANIFEST_NFC_FILE)
 ODM_MANIFEST_HCESIM_FILES := $(ODM_MANIFEST_NFC_FILE)
 ODM_MANIFEST_HCESIMESE_FILES := $(ODM_MANIFEST_NFC_FILE)
-ODM_MANIFEST_DISABLED_FILES := $(COMMON_PATH)/configs/nfc/odm_nfc_manifest_disabled_$(PREFIX).xml
+ODM_MANIFEST_DISABLED_FILES := $(COMMON_PATH)/configs/nfc/odm_nfc_manifest_disabled_nxp.xml
 endif
 
 ## Partitions
