@@ -4,6 +4,7 @@
             "Name": "GPUMinFreq",
             "Path": "/sys/kernel/gpu/gpu_min_clock",
             "Values": [
+                "949000",
                 "764000",
                 "455000",
                 "260000"
@@ -27,10 +28,11 @@
                 "2314000",
                 "2288000",
                 "1976000",
+                "1768000",
                 "1664000",
                 "1456000",
-		"1248000",
-		"1144000",
+                "1248000",
+                "1144000",
                 "0"
             ],
             "ResetOnInit": true
@@ -38,6 +40,16 @@
         {
             "Name": "LPMDisable",
             "Path": "/sys/module/cpuidle/parameters/off",
+            "Values": [
+                "0",
+                "1"
+            ],
+            "DefaultIndex": 0,
+            "ResetOnInit": true
+        },
+        {
+            "Name": "KERNEL_APP_START_NOTIFY",
+            "Path": "/sys/kernel/mm/vmscan/am_app_launch",
             "Values": [
                 "0",
                 "1"
@@ -147,6 +159,12 @@
         },
         {
             "PowerHint": "LAUNCH",
+            "Node": "GPUMinFreq",
+            "Duration": 5000,
+            "Value": "949000"
+        },
+        {
+            "PowerHint": "LAUNCH",
             "Node": "LPMDisable",
             "Duration": 5000,
             "Value": "1"
@@ -156,6 +174,12 @@
             "Node": "GPUPowerPolicy",
             "Duration": 5000,
             "Value": "always_on"
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "KERNEL_APP_START_NOTIFY",
+            "Duration": 5000,
+            "Value": "1"
         },
         {
             "PowerHint": "CAMERA_LAUNCH",
@@ -172,6 +196,12 @@
         {
             "PowerHint": "CAMERA_LAUNCH",
             "Node": "LPMDisable",
+            "Duration": 1000,
+            "Value": "1"
+        },
+        {
+            "PowerHint": "CAMERA_LAUNCH",
+            "Node": "KERNEL_APP_START_NOTIFY",
             "Duration": 1000,
             "Value": "1"
         },
@@ -244,13 +274,19 @@
         {
             "PowerHint": "EXPENSIVE_RENDERING",
             "Node": "GPUMinFreq",
-            "Duration": 0,
-            "Value": "764000"
+            "Duration": 3000,
+            "Value": "949000"
+        },
+        {
+            "PowerHint": "EXPENSIVE_RENDERING",
+            "Node": "CPUMinFreq",
+            "Duration": 3000,
+            "Value": "2314000"
         },
         {
             "PowerHint": "EXPENSIVE_RENDERING",
             "Node": "GPUPowerPolicy",
-            "Duration": 0,
+            "Duration": 3000,
             "Value": "always_on"
         }
     ]
