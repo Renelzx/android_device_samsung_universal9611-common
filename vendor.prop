@@ -36,6 +36,9 @@ ro.launcher.blur.appLaunch=0
 ## Dalvik
 dalvik.vm.dex2oat64.enabled=true
 
+## Vulkan
+debug.hwui.renderer=skiavk
+
 ## Graphics
 debug.hwui.skia_atrace_enabled=false
 debug.sf.auto_latch_unsignaled=0
