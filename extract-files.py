@@ -57,9 +57,11 @@ blob_fixups: blob_fixups_user_type = {
             '80 0E 40 F9 E1 03 16 AA 82 0C 80 52 08 00 80 D2'),
     'vendor/lib/hw/audio.primary.exynos9611.so': blob_fixup()
         .add_needed('libshim_audioparams.so')
-        .binary_regex_replace(b'str_parms_get_str', b'str_parms_get_mod'),
+        .binary_regex_replace(b'str_parms_get_str', b'str_parms_get_mod')
+        .replace_needed('libaudioroute.so', 'libaudioroute.9611.so'),
     'vendor/lib/libaudioproxy.so': blob_fixup()
-        .add_needed('libshim_mixerparams.so'),
+        .add_needed('libshim_mixerparams.so')
+        .replace_needed('libaudioroute.so', 'libaudioroute.9611.so'),
     'vendor/lib64/libvkservice.so': blob_fixup()
         .binary_regex_replace(b'ro.factory.factory_binary', b'ro.vendor.factory_binary\x00'),
     (
