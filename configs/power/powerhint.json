@@ -5,6 +5,7 @@
             "Path": "/sys/kernel/gpu/gpu_min_clock",
             "Values": [
                 "764000",
+                "546000",
                 "455000",
                 "260000"
             ],
@@ -29,8 +30,8 @@
                 "1976000",
                 "1664000",
                 "1456000",
-		"1248000",
-		"1144000",
+                "1248000",
+                "1144000",
                 "0"
             ],
             "ResetOnInit": true
@@ -130,31 +131,31 @@
         {
             "PowerHint": "INTERACTION",
             "Node": "GPUMinFreq",
-            "Duration": 0,
-            "Value": "455000"
+            "Duration": 2000,
+            "Value": "546000"
         },
         {
             "PowerHint": "LAUNCH",
             "Node": "CPUMaxFreq",
-            "Duration": 5000,
+            "Duration": 2000,
             "Value": "2314000"
         },
         {
             "PowerHint": "LAUNCH",
             "Node": "CPUMinFreq",
-            "Duration": 5000,
+            "Duration": 2000,
             "Value": "2314000"
         },
         {
             "PowerHint": "LAUNCH",
             "Node": "LPMDisable",
-            "Duration": 5000,
+            "Duration": 2000,
             "Value": "1"
         },
         {
             "PowerHint": "LAUNCH",
             "Node": "GPUPowerPolicy",
-            "Duration": 5000,
+            "Duration": 2000,
             "Value": "always_on"
         },
         {
@@ -244,7 +245,7 @@
         {
             "PowerHint": "EXPENSIVE_RENDERING",
             "Node": "GPUMinFreq",
-            "Duration": 0,
+            "Duration": 2000,
             "Value": "764000"
         },
         {
